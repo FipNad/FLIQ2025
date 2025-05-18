@@ -27,7 +27,7 @@ Spectrum (FHSS) system. It runs within a Docker container.
 
 **Architecture:**
 
-<img src=Architecture.jpg style="width:30%;">
+<img src=Architecture.jpg style="width:70%;">
 * **`server.py`:** This script acts as the central server and runs within a dedicated Docker container. It is
 responsible for authenticating client requests and providing a unique seed from the IDQ QRNG API to each
 authenticated client.
