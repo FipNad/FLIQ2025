@@ -28,6 +28,7 @@ Spectrum (FHSS) system. It runs within a Docker container.
 **Architecture:**
 
 <img src=Architecture.jpg style="width:50%;">
+
 * **Structure:** The architecture consists of three Docker containers placed in separate local networks in order 
 to simulate a real-world scenario of two authenticated clients establishing a common secret to use in a FHSS setup and an 
 authenticating server. 
