@@ -26,7 +26,8 @@ Spectrum (FHSS) system. It runs within a Docker container.
 * **Enhanced Seed Management:**  Robust seed management practices, including periodic seed rotation of seed derivation keys.
 
 **Architecture:**
-<img src=Architecture.jpg style="width:200px;">
+
+<img src=Architecture.jpg style="width:30%;">
 * **`server.py`:** This script acts as the central server and runs within a dedicated Docker container. It is
 responsible for authenticating client requests and providing a unique seed from the IDQ QRNG API to each
 authenticated client.
