@@ -1,0 +1,54 @@
+version: '3'
+services:
+  server:
+    build: ./server
+    container_name: server
+    ports:
+      - "12345:12345"
+    networks:
+      - server_network
+  
+  client_a:
+    build: ./client_a
+    depends_on:
+      - server
+    ports:
+      - "5001:5000"
+    networks:
+      - client_a_network
+      - secure_peer_net
+  
+  client_b:
+    build: ./client_b
+    depends_on:
+      - server
+    ports:
+      - "5002:5000"
+    networks:
+      - client_b_network
+      - secure_peer_net
+
+networks:
+  server_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.0.0.0/24
+
+  client_a_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.10.0.0/24
+
+  client_b_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
+        
+  secure_peer_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.30.0.0/24
